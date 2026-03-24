@@ -1,0 +1,42 @@
+// --- VARIABLES FIGMA ---
+$color-primary: #0074C7;    // La couleur dominante (ex: tes boutons)
+$color-secondary: #F1F8FC;  // La couleur des titres
+$color-bg-page: #ffffff;    // Le fond de ta maquette
+$card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); // L'ombre de tes cartes
+$card-radius: 12px;         // L'arrondi (border-radius) de tes cartes
+$font-family: 'Inter', sans-serif; // La police utilisée
+
+// --- INJECTION DANS BOOTSTRAP ---
+$primary: $color-primary;
+$body-bg: $color-bg-page;
+$border-radius: $card-radius;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+.artisan-card {
+  @extend .card; // On prend la base Bootstrap
+  border: none;  // Souvent, sur Figma, on ne met pas de bordure grise
+  box-shadow: $card-shadow;
+  transition: transform 0.3s ease;
+
+  .card-body {
+    padding: 1.5rem; // Vérifie la valeur "padding" sur Figma
+
+    .artisan-title {
+      font-weight: 700;
+      color: $color-secondary;
+      margin-bottom: 0.5rem;
+    }
+
+    .specialite-badge {
+      @extend .badge;
+      background-color: rgba($color-primary, 0.1); // Version claire de ta couleur
+      color: $color-primary;
+      border-radius: 50px; // Pour un badge bien arrondi
+    }
+  }
+
+  &:hover {
+    transform: translateY(-5px); // Petit effet dynamique au survol
+  }
+}
