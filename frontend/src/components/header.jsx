@@ -6,12 +6,7 @@ function Header() {
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
       <div className="container">
         <Link to="/" className="navbar-brand">
-          <img 
-            src="/images/Logo.png" 
-            alt="Logo Trouve ton artisan" 
-            style={{ maxHeight: '50px' }} 
-            className="img-fluid" 
-          />
+          <img src="/images/Logo.png" alt="Logo Trouve ton artisan" style={{ maxHeight: '50px' }} className="img-fluid" />
         </Link>
 
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -24,6 +19,15 @@ function Header() {
             <Link className="nav-link fw-medium" to="/artisan?category=Bâtiment">Bâtiment</Link>
             <Link className="nav-link fw-medium" to="/artisan?category=Fabrication">Fabrication</Link>
             <Link className="nav-link fw-medium" to="/artisan?category=Services">Services</Link>
+          </div>
+        </div>
+
+        <div className="search-bar-container mx-auto" style={{ maxWidth: '700px' }}>
+          <div className="input-group mb-3 shadow-sm">
+              <input type="text" className="form-control form-control-lg border-0" placeholder="Nom de l'artisan ou métier..." />
+              <button className="btn btn-primary btn-lg px-4" type="button">
+                  Rechercher
+              </button>
           </div>
         </div>
       </div>

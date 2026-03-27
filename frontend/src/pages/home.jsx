@@ -2,9 +2,12 @@ import '../scss/App.scss'
 
 function Home() {
   return (
-    <div className="container py-5">
-      <h1 className="text-primary fw-bold">Bienvenue sur Trouve Ton Artisan !</h1>
-      <p>C'est ici que le contenu de ta page d'accueil va apparaître.</p>
+    <div className="home-container">
+        <section className="hero-section bg-light py-5">
+            <div className="container text-center">
+                <h1 className="main-title mb-4">Trouve l'artisan qu'il te faut</h1>
+            </div>
+        </section>
     </div>
   );
 }
