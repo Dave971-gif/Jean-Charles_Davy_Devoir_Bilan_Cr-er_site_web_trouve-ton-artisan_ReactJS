@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom';
 import '../scss/App.scss';
 
-function Header() {
+function Header({ artisans = [] }) {
+  
+  const categories = [...new Set(artisans.map(artisan => artisan.Catégorie))];
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
       <div className="container">
@@ -13,20 +16,19 @@ function Header() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <div className="navbar-nav ms-auto gap-lg-3">
-            <Link className="nav-link fw-medium" to="/artisan?category=Alimentation">Alimentation</Link>
-            <Link className="nav-link fw-medium" to="/artisan?category=Bâtiment">Bâtiment</Link>
-            <Link className="nav-link fw-medium" to="/artisan?category=Fabrication">Fabrication</Link>
-            <Link className="nav-link fw-medium" to="/artisan?category=Services">Services</Link>
-          </div>
+        <div className="nav-links d-flex gap-4">
+          {categories.map((cat, index) => (
+            <Link key={index} to={`/category/${cat.toLowerCase()}`} className="nav-link fw-bold">
+              {cat}
+            </Link>
+          ))}
         </div>
 
-        <div className="search-bar-container mx-auto" style={{ maxWidth: '700px' }}>
+        <div className="search-bar-container mx-5" style={{ maxWidth: '700px' }}>
           <div className="input-group mb-3 shadow-sm">
               <input type="text" className="form-control form-control-lg border-0" placeholder="Nom de l'artisan ou métier..." />
-              <button className="btn btn-primary btn-lg px-4" type="button">
-                  Rechercher
+              <button className="btn btn-lg" type="button">
+                <img src="/images/recherche.png" alt="Rechercher" className="img-fluid logo-search" style={{ width: '50px', height: '50px', objectFit: 'contain' }} />
               </button>
           </div>
         </div>

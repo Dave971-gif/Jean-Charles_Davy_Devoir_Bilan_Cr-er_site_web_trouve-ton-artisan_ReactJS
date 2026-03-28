@@ -1,0 +1,15 @@
+@import '../scss/App.scss';
+
+
+.bgpage404 {
+    background-color: $error;
+    min-height: 100vh;
+
+    .logo-404 {
+        width: 100vh;
+    }
+
+    .text-404 {
+        color: $secondary;
+    }
+}

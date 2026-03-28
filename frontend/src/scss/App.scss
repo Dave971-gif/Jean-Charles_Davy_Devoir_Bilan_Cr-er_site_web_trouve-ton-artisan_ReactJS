@@ -25,16 +25,52 @@
   font-style: normal;
 }
 
-@import "bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
-$primary: #007bff; // Couleur principale personnalisée
-$secondary: #6c757d; // Couleur secondaire personnalisée
+$primary: #0074C7; 
+$secondary: #F1F8FC;
+$tertiary: #00497C;
+$text: #384050;
+$topstitching: #82B864;
+$error: #CD2C2E;
 
 
 body {
+  background-color: white;
   font-family: 'Graphik', sans-serif;
-}
+  color: $text;
 
-h1 {
-  font-weight: 700;
+  h1 {
+    font-weight: 700;
+  }
+
+  header {
+    background-color: $secondary;
+    padding: 1rem;
+    max-height: 100px;
+
+    link {
+      color: $text;
+
+      &:hover {
+        color: $text;
+        text-decoration: underline !important;
+      }
+    }
+  }
+
+  footer {
+    background-color: $primary;
+    color: $secondary;
+    padding: 1rem;
+
+    a {
+      color: $secondary;
+
+      &:hover {
+        color: $secondary;
+        text-decoration: underline !important;
+      }
+    }
+  }
 }
