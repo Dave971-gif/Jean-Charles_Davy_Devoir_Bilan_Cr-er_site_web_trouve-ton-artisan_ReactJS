@@ -40,6 +40,10 @@ body {
   font-family: 'Graphik', sans-serif;
   color: $text;
 
+  @media (max-width: 768px) {
+    padding: 0;
+  }
+
   h1 {
     font-weight: 700;
   }
@@ -63,6 +67,11 @@ body {
     background-color: $primary;
     color: $secondary;
     padding: 1rem;
+
+    @media (max-width: 768px) {
+      text-align: center;
+      padding: 0;
+    }
 
     a {
       color: $secondary;

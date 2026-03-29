@@ -12010,15 +12010,23 @@ body header {
   padding: 1rem;
   max-height: 100px;
 }
+body header link {
+  color: #384050;
+}
+body header link:hover {
+  color: #384050;
+  text-decoration: underline !important;
+}
 body footer {
   background-color: #0074C7;
   color: #F1F8FC;
   padding: 1rem;
 }
-body footer .a-foot {
+body footer a {
   color: #F1F8FC;
 }
-body footer .a-foot:hover {
+body footer a:hover {
+  color: #F1F8FC;
   text-decoration: underline !important;
 }
 

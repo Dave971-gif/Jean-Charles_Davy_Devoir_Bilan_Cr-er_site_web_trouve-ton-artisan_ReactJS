@@ -12002,11 +12002,6 @@ body {
   font-family: "Graphik", sans-serif;
   color: #384050;
 }
-@media (max-width: 768px) {
-  body {
-    padding: 0;
-  }
-}
 body h1, body .h1 {
   font-weight: 700;
 }
@@ -12027,16 +12022,79 @@ body footer {
   color: #F1F8FC;
   padding: 1rem;
 }
-@media (max-width: 768px) {
-  body footer {
-    text-align: center;
-    padding: 0;
-  }
-}
 body footer a {
   color: #F1F8FC;
 }
 body footer a:hover {
   color: #F1F8FC;
   text-decoration: underline !important;
-}/*# sourceMappingURL=App.css.map */
+}
+
+body .artisan-section {
+  gap: 2rem;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  max-width: 1440px;
+  width: 100%;
+}
+@media (max-width: 768px) {
+  body .artisan-section {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+body .artisan-section .artisan-title {
+  background-color: #0074C7;
+  color: #F1F8FC;
+  border-radius: 30px;
+  font-weight: 700;
+  max-width: 360px;
+}
+@media (max-width: 768px) {
+  body .artisan-section .artisan-title {
+    max-width: 90%;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+}
+body .artisan-section .howto {
+  background-color: #F1F8FC;
+  color: #00497C;
+  border-radius: 30px;
+  padding: 1rem;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+body .artisan-section .craftsman-block {
+  gap: 2rem;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+@media (max-width: 320px) {
+  body .artisan-section .craftsman-block {
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+  }
+}
+body .artisan-section .craftsman-block .craftsman-card {
+  background-color: #F1F8FC;
+  color: #00497C;
+  border-radius: 30px;
+  padding: 1rem;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+@media (max-width: 768px) {
+  body .artisan-section .craftsman-block .craftsman-card {
+    max-width: 90%;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=home.css.map */
