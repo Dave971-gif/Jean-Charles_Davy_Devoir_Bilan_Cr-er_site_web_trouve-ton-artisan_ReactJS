@@ -20,7 +20,7 @@ function Header({ artisans = [] }) {
     if (isCategory) {
       navigate(`/artisan?category=${isCategory}`);
     } else {
-      // 2. Sinon, on va sur la page de liste avec le nom en filtre
+    // 2. Sinon, on va sur la page de liste avec le nom en filtre
       navigate(`/artisan?search=${searchTerm}`);
     }
     
@@ -38,7 +38,7 @@ function Header({ artisans = [] }) {
         {/* Navigation Links */}
         <div className="nav-links d-flex flex-wrap gap-4">
           {categories.map((cat, index) => (
-            <Link key={index} to={`/category/${cat.toLowerCase()}`} className="nav-link fw-bold">
+            <Link key={index} to={`/artisan?category=${cat}`} className="nav-link fw-bold">
               {cat}
             </Link>
           ))}
