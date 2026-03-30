@@ -19,7 +19,7 @@ function Home() {
         <div className="artisan-title p-5">
           <h1>Les 3 artisans du mois</h1>
         </div>
-        <div className= "craftsman-block d-flex align-items-center justify-content-start m-5 ">
+        <div className= "craftsman-block d-flex flex-wrap align-items-center justify-content-start m-5 ">
           <div className="craftsman-card text-center">
               <p>Nom : Orville Salmons</p>
               <p>Note : 5.0</p>

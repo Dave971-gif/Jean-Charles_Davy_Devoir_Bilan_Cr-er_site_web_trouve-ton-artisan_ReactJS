@@ -29,14 +29,14 @@ function Header({ artisans = [] }) {
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
-      <div className="container">
+      <div className="container d-flex flex-wrap">
         {/* Logo */}
         <Link to="/" className="navbar-brand">  
           <img src="/images/Logo.png" alt="Logo Trouve ton artisan" style={{ maxHeight: '50px' }} className="img-fluid" />
         </Link>
 
         {/* Navigation Links */}
-        <div className="nav-links d-flex gap-4">
+        <div className="nav-links d-flex flex-wrap gap-4">
           {categories.map((cat, index) => (
             <Link key={index} to={`/category/${cat.toLowerCase()}`} className="nav-link fw-bold">
               {cat}

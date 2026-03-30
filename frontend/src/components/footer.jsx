@@ -3,7 +3,7 @@ import '../scss/App.scss';
 
 function Footer() {
   return (
-    <footer className="d-flex mt-5 justify-content-around align-items-center">
+    <footer className="d-flex flex-wrap mt-5 justify-content-around align-items-center">
       <div className="d-flex flex-wrap justify-content-center gap-3 pb-3 mr-auto">
         <Link to="/page-build" className="nav-link" >Accessibilité</Link>
         <Link to="/page-build" className="nav-link" >Cookies</Link>
