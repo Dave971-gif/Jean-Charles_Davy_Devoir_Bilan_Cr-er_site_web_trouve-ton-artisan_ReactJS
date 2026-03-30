@@ -1,37 +1,24 @@
-import { useSearchParams } from 'react-router-dom';
-import artisanData from '../data/artisans.json'; // Vérifie le chemin vers ton JSON
+import '../scss/App.scss';
 
 function FicheArtisan() {
-  // 1. On récupère les paramètres de l'URL
-  const [searchParams] = useSearchParams();
-  const categoryFilter = searchParams.get('category');
-
-  // 2. On filtre la liste des artisans
-  // Si categoryFilter existe, on ne garde que ceux qui correspondent. 
-  // Sinon (null), on affiche tout le monde.
-  const filteredArtisans = artisanData.filter(artisan => {
-    if (!categoryFilter) return true;
-    return artisan.Catégorie === categoryFilter;
-  });
-
   return (
     <div className="container py-5">
-      <h1 className="mb-4">
-        {categoryFilter ? `Artisans : ${categoryFilter}` : "Tous nos artisans"}
-      </h1>
-
-      <div className="d-flex flex-wrap gap-4 justify-content-center">
-        {filteredArtisans.map((artisan) => (
-          <div key={artisan.id} className="craftsman-card text-center p-4">
-            <p className="fw-bold">Nom : {artisan.name}</p>
-            <p>Note : {artisan.note}</p>
-            <p>Spécialité : {artisan.specialty}</p>
-            <p>Localisation : {artisan.location}</p>
-          </div>
-        ))}
+      <div>
+        <h1>Catégories</h1>
+      </div>
+      <div class="btn-group" role="group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Quelle catégories ?
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Alimentation</a></li>
+          <li><a class="dropdown-item" href="#">Bâtiment</a></li>
+          <li><a class="dropdown-item" href="#">Fabrication</a></li>
+          <li><a class="dropdown-item" href="#">Services</a></li>
+        </ul>
       </div>
     </div>
-  );
+  )
 }
 
 export default FicheArtisan;
