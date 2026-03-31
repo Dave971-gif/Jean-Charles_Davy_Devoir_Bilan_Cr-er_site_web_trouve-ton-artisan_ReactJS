@@ -12041,13 +12041,73 @@ body footer a:hover {
   text-decoration: underline !important;
 }
 
-.bgpage404 {
-  background-color: #CD2C2E;
-  min-height: 100vh;
+body .fiche-artisan {
+  background-color: #F1F8FC;
+  border-radius: 20px;
+  height: -moz-fit-content;
+  height: fit-content;
 }
-.bgpage404 .logo-404 {
-  width: 100vh;
+body .fiche-artisan .fiche-info {
+  border-radius: 20px;
 }
-.bgpage404 .text-404 {
+body .fiche-artisan .fiche-info .photo {
+  border-left: 1px solid #0074C7;
+  border-right: 1px solid #0074C7;
+  border-radius: 20px;
+}
+body .fiche-artisan .fiche-info .photo .craftsman-photo {
+  width: 100%;
+  height: auto;
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+body .fiche-artisan .fiche-info .zone-info {
+  background-color: #00497C;
   color: #F1F8FC;
-}/*# sourceMappingURL=page404.css.map */
+  border-left: 1px solid #0074C7;
+  border-right: 1px solid #0074C7;
+  border-radius: 20px;
+}
+body .fiche-artisan .fiche-info .zone-info a {
+  color: #F1F8FC;
+}
+body .fiche-artisan .fiche-info .form-zone {
+  border-left: 1px solid #0074C7;
+  border-right: 1px solid #0074C7;
+  border-radius: 20px;
+}
+body .fiche-artisan .fiche-info .form-zone h2, body .fiche-artisan .fiche-info .form-zone .h2 {
+  color: #0074C7;
+}
+body .fiche-artisan .fiche-info .form-zone .form {
+  background-color: #82B864;
+  padding: 20px;
+  border-radius: 20px;
+}
+body .fiche-artisan .fiche-info .form-zone .form .form-label {
+  color: #384050;
+  width: 80px;
+  max-width: 80px;
+}
+@media (max-width: 768px) and (max-width: 320px) {
+  body .fiche-artisan .fiche-info .form-zone .form .form-label {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 5px;
+  }
+}
+body .fiche-artisan .fiche-info .form-zone .form .form-control {
+  border-radius: 10px;
+  border: 1px solid #0074C7;
+}
+body .fiche-artisan .fiche-info .form-zone .form button {
+  background-color: #0074C7;
+  color: #F1F8FC;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+body .fiche-artisan .fiche-info .form-zone .form button:hover {
+  background-color: #00497C;
+  cursor: pointer;
+}/*# sourceMappingURL=fiche_artisan.css.map */

@@ -12002,6 +12002,11 @@ body {
   font-family: "Graphik", sans-serif;
   color: #384050;
 }
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+}
 body h1, body .h1 {
   font-weight: 700;
 }
@@ -12021,6 +12026,12 @@ body footer {
   background-color: #0074C7;
   color: #F1F8FC;
   padding: 1rem;
+}
+@media (max-width: 768px) {
+  body footer {
+    text-align: center;
+    padding: 0;
+  }
 }
 body footer a {
   color: #F1F8FC;

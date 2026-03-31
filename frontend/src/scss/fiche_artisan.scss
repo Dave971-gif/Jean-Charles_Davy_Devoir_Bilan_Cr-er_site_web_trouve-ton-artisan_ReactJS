@@ -2,16 +2,83 @@
 
 body {
     .fiche-artisan {
-        .craftsman-photo {
-            width: 100%;
-            height: auto;
-            max-width: 200px;
-            
-            margin-bottom: 20px;
-        }
+        background-color: $secondary;
+        border-radius: 20px;
+        height: fit-content;
 
-        .zone-info {
-            background-color: $tertiary !important;
+        .fiche-info{
+            border-radius: 20px;
+
+            .photo {
+                border-left: 1px solid $primary;
+                border-right: 1px solid $primary;
+                border-radius: 20px;
+
+                .craftsman-photo {
+                    width: 100%;
+                    height: auto;
+                    max-width: 200px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .zone-info {
+                background-color: $tertiary;
+                color: $secondary;
+                border-left: 1px solid $primary;
+                border-right: 1px solid $primary;
+                border-radius: 20px;
+
+                a {
+                    color: $secondary;
+                }
+            }
+            
+            .form-zone {
+                border-left: 1px solid $primary;
+                border-right: 1px solid $primary;
+                border-radius: 20px;
+                
+                h2 {
+                    color: $primary;
+                }
+
+                .form {
+                    background-color: $topstitching;
+                    padding: 20px;
+                    border-radius: 20px;
+
+                    .form-label {
+                        color: $text;
+                        width: 80px;
+                        max-width: 80px;
+
+                        @media (max-width: 768px) and (max-width: 320px) {
+                            width: 100%;
+                            max-width: none;
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    .form-control {
+                        border-radius: 10px;
+                        border: 1px solid $primary;
+                    }
+
+                    button {
+                        background-color: $primary;
+                        color: $secondary;
+                        border: none;
+                        border-radius: 10px;
+                        padding: 10px 20px;
+
+                        &:hover {
+                            background-color: $tertiary;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
         }
     }
 }
