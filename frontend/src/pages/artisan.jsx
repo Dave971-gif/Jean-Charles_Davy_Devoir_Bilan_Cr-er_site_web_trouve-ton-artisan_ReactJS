@@ -39,7 +39,7 @@ function Artisan() {
               <p className="fw-bold">Nom : {artisan.Nom}</p>
               <p>Note : {artisan.Note} / 5</p>
               <p>Spécialité : {artisan.Spécialité}</p>
-              <p>Localisation : {artisan.Lieu}</p>
+              <p>Localisation : {artisan.Ville}</p>
               <Link to={`/fiche-artisan/${artisan.id}`} className="btn btn-primary mt-3">
                 Voir la fiche complète
               </Link>
