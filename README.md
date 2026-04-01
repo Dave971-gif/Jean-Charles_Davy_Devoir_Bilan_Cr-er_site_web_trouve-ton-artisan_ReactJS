@@ -2,7 +2,8 @@
 
 |-- INFO --|
 
-This site is a project with the Region Auvergne Rhône-Alpes to search craftsman with categories, so you can contact them on the form made for it.
+This site is a project with the Region Auvergne Rhône-Alpes to search craftsman with categories, so you can contact them on the form made for it. 
+
 
 Built with:
 
@@ -14,6 +15,7 @@ ReactJS with JSX for dynamic HTML rendering.
 
 Bootstrap and SCSS for the Style
 
+Cors for the site security.
 
 
 |-- PREREQUISITES AND LAUNCH --|
