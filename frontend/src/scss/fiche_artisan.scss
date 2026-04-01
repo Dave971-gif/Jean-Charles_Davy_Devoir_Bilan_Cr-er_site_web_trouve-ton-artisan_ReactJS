@@ -29,8 +29,16 @@ body {
                 border-right: 1px solid $primary;
                 border-radius: 20px;
 
+                .star-info {
+                    color: $topstitching !important;
+                }
+
                 a {
                     color: $secondary;
+
+                    &:hover {
+                        color: $topstitching !important;
+                    }
                 }
             }
             
@@ -53,7 +61,7 @@ body {
                         width: 80px;
                         max-width: 80px;
 
-                        @media (max-width: 768px) and (max-width: 320px) {
+                        @media (max-width: 768px){
                             width: 100%;
                             max-width: none;
                             margin-bottom: 5px;

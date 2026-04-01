@@ -1,4 +1,3 @@
-import '../scss/App.scss'
 import '../scss/home.scss'
 
 function Home() {
@@ -22,19 +21,40 @@ function Home() {
         <div className= "craftsman-block d-flex flex-wrap align-items-center justify-content-start m-5 ">
           <div className="craftsman-card text-center">
               <p>Nom : Orville Salmons</p>
-              <p>Note : 5.0</p>
+              <p>Note : 5.0 (
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+              )
+              </p>
               <p>Spécialité : Chauffagiste</p>
               <p>Localisation : Evian</p>
           </div>
           <div className="craftsman-card text-center">
               <p>Nom : Ernest Carignan</p>
-              <p>Note : 5.0</p>
+              <p>Note : 5.0 (
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+              )
+              </p>
               <p>Spécialité : Ferronier</p>
               <p>Localisation : Le Puy-en-Velay</p>
           </div>
           <div className="craftsman-card text-center">
               <p>Nom : Chocolatier Labbé</p>
-              <p>Note : 4.9</p>
+              <p>Note : 4.9 (
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-fill star mx-1"></i>
+                <i class="bi bi-star-half star mx-1"></i>
+              )
+              </p>
               <p>Spécialité : Chocolatier</p>
               <p>Localisation : Lyon</p>
           </div>

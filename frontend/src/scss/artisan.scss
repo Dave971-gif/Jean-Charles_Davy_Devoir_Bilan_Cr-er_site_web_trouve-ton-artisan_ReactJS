@@ -1,0 +1,15 @@
+@import "./App.scss";
+
+body {
+    .artisan-zone {
+        .craftsman-info {
+            background-color: $secondary;
+            color: $text;
+            border-radius: 30px;
+            
+            .star {
+                color: $topstitching;
+            }
+        }
+    }
+}

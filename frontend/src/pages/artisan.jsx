@@ -1,7 +1,7 @@
 import { useSearchParams } from 'react-router-dom';
 import artisansData from '../data/artisans.json';
 import { Link } from 'react-router-dom';
-import '../scss/home.scss';
+import '../scss/artisan.scss';
 
 function Artisan() {
   // 1. On écoute l'URL 
@@ -26,18 +26,43 @@ function Artisan() {
     return true;
   });
 
+  //Affichage des étoiles en fonction de la note de l'artisan
+  const renderStars = (note) => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      if (i <= Math.floor(note)) {
+        // Étoile pleine
+        stars.push(<i key={i} className="bi bi-star-fill"></i>);
+      } else if (i - 0.5 <= note) {
+        // Étoile moitié (si la note est par exemple 4.5)
+        stars.push(<i key={i} className="bi bi-star-half"></i>);
+      } else {
+        // Étoile vide
+        stars.push(<i key={i} className="bi bi-star"></i>);
+      }
+    }
+    
+    return stars;
+  };
+
   return (
     <div className="container py-5">
       <h1 className="text-primary mb-5">
         {categoryFilter || (searchFilter ? `Résultats pour "${searchFilter}"` : "Nos Artisans")}
       </h1>
 
-      <div className="artisan-section d-flex flex-wrap justify-content-center gap-4">
+      <div className="artisan-zone d-flex flex-wrap justify-content-center gap-4">
         {filteredArtisans.length > 0 ? (
           filteredArtisans.map((artisan) => (
-            <div key={artisan.id} className="craftsman-card text-center p-4">
+            <div key={artisan.id} className="craftsman-info text-center p-4">
               <p className="fw-bold">Nom : {artisan.Nom}</p>
-              <p>Note : {artisan.Note} / 5</p>
+              <p>Note : {artisan.Note} / 5 (
+                <span className="star mx-1">
+                  {renderStars(artisan.Note)} 
+                </span>
+              )
+              </p>
               <p>Spécialité : {artisan.Spécialité}</p>
               <p>Localisation : {artisan.Ville}</p>
               <Link to={`/fiche-artisan/${artisan.id}`} className="btn btn-primary mt-3">

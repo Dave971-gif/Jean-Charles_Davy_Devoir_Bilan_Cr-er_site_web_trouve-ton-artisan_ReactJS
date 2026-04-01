@@ -23,6 +23,25 @@ function FicheArtisan() {
         );
     }
 
+    //Affichage des étoiles en fonction de la note de l'artisan
+    const renderStars = (note) => {
+        const stars = [];
+
+        for (let i = 1; i <= 5; i++) {
+          if (i <= Math.floor(note)) {
+            // Étoile pleine
+            stars.push(<i key={i} className="bi bi-star-fill"></i>);
+          } else if (i - 0.5 <= note) {
+            // Étoile moitié (si la note est par exemple 4.5)
+            stars.push(<i key={i} className="bi bi-star-half"></i>);
+          } else {
+            // Étoile vide
+            stars.push(<i key={i} className="bi bi-star"></i>);
+          }
+        }
+        return stars;
+    };
+
     return (
         <div className="fiche-artisan container mt-4 shadow">
             <div>
@@ -37,7 +56,12 @@ function FicheArtisan() {
                         <h2>Infos</h2>
                     </div>
                     <div>
-                        <p>Note : {artisan.Note}</p>
+                        <p>Note : {artisan.Note} (
+                            <span className="star-info mx-1">
+                              {renderStars(artisan.Note)} 
+                            </span>
+                        )
+                        </p>
                         <p>Spécialité : {artisan.Spécialité}</p>
                         <p>Localisation : {artisan.Ville}</p>
                         <p>A propos : <a href={artisan.Site_web} target="_blank" rel="noopener noreferrer" className="text-decoration-underline">{artisan.Site_web}</a></p>

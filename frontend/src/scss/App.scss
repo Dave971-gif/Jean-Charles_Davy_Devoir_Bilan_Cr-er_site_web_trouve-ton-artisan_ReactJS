@@ -40,10 +40,6 @@ body {
   font-family: 'Graphik', sans-serif;
   color: $text;
 
-  @media (max-width: 768px) {
-    padding: 0;
-  }
-
   h1 {
     font-weight: 700;
   }
