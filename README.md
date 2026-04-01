@@ -2,14 +2,15 @@
 
 |-- INFO --|
 
-This project is a Management System for a Marina (Port de Plaisance). It's a full-stack administration tool with a complete CRUD (Create, Read, Update, Delete) system.
+This site is a project with the Region Auvergne Rhône-Alpes to search craftsman with categories, so you can contact them on the form made for it.
+
 Built with:
 
 Node.js & Express for the server logic.
 
 PhpMyAmin with WAMP for the database management.
 
-EJS (Embedded JavaScript) for dynamic HTML rendering.
+ReactJS with JSX for dynamic HTML rendering.
 
 Bootstrap and SCSS for the Style
 
