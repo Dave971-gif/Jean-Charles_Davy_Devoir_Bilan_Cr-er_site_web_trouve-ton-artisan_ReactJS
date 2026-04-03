@@ -18,7 +18,7 @@ function App() {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/artisans');
+        const response = await fetch('https://jean-charles-davy-devoir-bilan-cr-er-6dpq.onrender.com/api/artisans');
         const data = await response.json();
         setArtisans(data);
       } catch (error) {
