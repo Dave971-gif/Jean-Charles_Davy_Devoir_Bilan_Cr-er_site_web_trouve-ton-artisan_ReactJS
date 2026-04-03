@@ -37,4 +37,4 @@ I tried to respect the style of site as realized on figma, and changed some styl
 
 |-- PLUS --|
 
-This site was built with some difficulties, looking on the sites to build with react using jsx, and the backend using Node and express server. I had to ask some things to my teacher (the IA), so he could help me somehow in the site development. Next, I ll be able to build site alone, even if I'm loosing more time.
+This site was built with some difficulties, looking on the sites to build with react using jsx, and the backend using Node and express server. I had to ask some things to my teacher (the IA), so he could help me somehow in the site development. Next, I ll be able to build site alone, even if I'm loosing more time. I have done the CDM (Concenptual Data Model) and the LDM (Logical Data Model) at the end, because I read that fact at the end, so I had to work on it at the last time. Now done.
