@@ -6,7 +6,7 @@ function Header({ artisans = [] }) {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate();
 
-  const categories = [...new Set(artisans.map(artisan => artisan.Catégorie))];
+  const categories = [...new Set(artisans.map(artisan => artisan.categorie))];
 
   const handleSearch = (e) => {
     e.preventDefault(); // Empêche la page de se recharger

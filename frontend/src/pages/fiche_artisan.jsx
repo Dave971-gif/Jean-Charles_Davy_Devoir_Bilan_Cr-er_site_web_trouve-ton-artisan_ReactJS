@@ -1,17 +1,20 @@
 import { useParams } from 'react-router-dom';
-import artisansData from '../data/artisans.json';
 import '../scss/fiche_artisan.css';
 
-function FicheArtisan() {
+function FicheArtisan({artisans, loading}) {
     const { id } = useParams();
     
+    if (loading) {
+        return <div className="container py-5 text-center">Chargement des détails...</div>;
+    }
+
     // On cherche l'artisan (on utilise == pour plus de souplesse)
-    const artisan = artisansData.find(art => art.id == id);
+    const artisan = artisans.find(art => art.id == id);
 
     // Fonction de gestion du formulaire de contact
     const handleSubmit = (e) => {
     e.preventDefault(); // Empêche la page de se recharger
-    alert("Merci ! Votre message a bien été envoyé (enfin, presque, c'est une démo !)");
+    alert("Merci ! Votre message a bien été envoyé à l'artisan."); // Message de confirmation (à remplacer par une vraie logique d'envoi)
 };
 
     // Sécurité : si l'artisan n'est pas trouvé, on affiche un message d'erreur
@@ -19,6 +22,7 @@ function FicheArtisan() {
         return (
             <div className="container py-5">
                 <h1>Artisan non trouvé</h1>
+                <p>Vérifiez l'URL ou patientez pendant le chargement...</p> 
             </div>
         );
     }
@@ -45,7 +49,7 @@ function FicheArtisan() {
     return (
         <div className="fiche-artisan container mt-4 shadow">
             <div>
-                <h1 className="text-primary text-center">{artisan.Nom}</h1>
+                <h1 className="text-primary text-center">{artisan.nom}</h1>
             </div>
             <div className="fiche-info row mt-4 shadow p-4">
                 <div className="photo col-md-4 text-center align-content-center">
@@ -56,15 +60,15 @@ function FicheArtisan() {
                         <h2>Infos</h2>
                     </div>
                     <div>
-                        <p>Note : {artisan.Note} (
+                        <p>Note : {artisan.note} (
                             <span className="star-info mx-1">
-                              {renderStars(artisan.Note)} 
+                              {renderStars(artisan.note)} 
                             </span>
                         )
                         </p>
-                        <p>Spécialité : {artisan.Spécialité}</p>
-                        <p>Localisation : {artisan.Ville}</p>
-                        <p>A propos : <a href={artisan.Site_web} target="_blank" rel="noopener noreferrer" className="text-decoration-underline">{artisan.Site_web}</a></p>
+                        <p>Spécialité : {artisan.specialite}</p>
+                        <p>Localisation : {artisan.localisation}</p>
+                        <p>A propos : <a href={artisan.site_web} target="_blank" rel="noopener noreferrer" className="text-decoration-underline">{artisan.Site_web}</a></p>
                     </div>
                 </div>
                 <div className="form-zone col-md-4 p-3 contact-block">

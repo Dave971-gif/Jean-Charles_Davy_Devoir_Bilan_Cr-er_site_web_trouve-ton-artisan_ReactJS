@@ -1,28 +1,34 @@
-import { useSearchParams } from 'react-router-dom';
-import artisansData from '../data/artisans.json';
-import { Link } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import '../scss/artisan.scss';
 
-function Artisan() {
-  // 1. On écoute l'URL 
+function Artisan({artisans, loading}) {
+
+  // 1. On écoute l'URL pour les filtres (catégorie et recherche texte)
   const [searchParams] = useSearchParams();
   const categoryFilter = searchParams.get('category');
   const searchFilter = searchParams.get('search');
 
   // 2. LA LOGIQUE DE FILTRAGE
-  const filteredArtisans = artisansData.filter((artisan) => {
-    // Si on a un filtre par catégorie (via le menu)
+  const filteredArtisans = artisans.filter((artisan) => {
+    // On utilise les noms de colonnes de ta base de données
+    const artisanCat = artisan.categorie; 
+    const artisanNom = artisan.nom;
+    const artisanSpec = artisan.specialite;
+
+    // Filtre par catégorie (Menu)
     if (categoryFilter) {
-      return artisan.Catégorie === categoryFilter;
+      return artisanCat === categoryFilter;
     }
-    // Si on a un filtre par recherche texte (via la barre de recherche)
+
+    // Filtre par recherche texte (Barre de recherche)
     if (searchFilter) {
+      const search = searchFilter.toLowerCase();
       return (
-        artisan.Nom.toLowerCase().includes(searchFilter.toLowerCase()) ||
-        artisan.Spécialité.toLowerCase().includes(searchFilter.toLowerCase())
+        artisanNom?.toLowerCase().includes(search) ||
+        artisanSpec?.toLowerCase().includes(search)
       );
     }
-    // Si aucun filtre, on affiche tout
+
     return true;
   });
 
@@ -46,6 +52,9 @@ function Artisan() {
     return stars;
   };
 
+  // 3. AFFICHAGE
+  if (loading) return <div className="container py-5 text-center">Chargement des artisans...</div>;
+
   return (
     <div className="container py-5">
       <h1 className="text-primary mb-5">
@@ -56,15 +65,15 @@ function Artisan() {
         {filteredArtisans.length > 0 ? (
           filteredArtisans.map((artisan) => (
             <div key={artisan.id} className="craftsman-info text-center p-4">
-              <p className="fw-bold">Nom : {artisan.Nom}</p>
-              <p>Note : {artisan.Note} / 5 (
+              <p className="fw-bold">Nom : {artisan.nom}</p>
+              <p>Note : {artisan.note} / 5 (
                 <span className="star mx-1">
-                  {renderStars(artisan.Note)} 
+                  {renderStars(artisan.note)} 
                 </span>
               )
               </p>
-              <p>Spécialité : {artisan.Spécialité}</p>
-              <p>Localisation : {artisan.Ville}</p>
+              <p>Spécialité : {artisan.specialite}</p>
+              <p>Localisation : {artisan.localisation}</p>
               <Link to={`/fiche-artisan/${artisan.id}`} className="btn btn-primary mt-3">
                 Voir la fiche complète
               </Link>
